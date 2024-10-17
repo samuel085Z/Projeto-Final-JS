@@ -1,0 +1,261 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f8; /* Cor de fundo clara */
+    margin: 0;
+    color: #333; /* Cor do texto */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para mudanças de tema */
+}
+
+.container {
+    background-color: #fff; /* Cor de fundo branca */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #4CAF50; /* Cor do título */
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #333; /* Cor do subtítulo */
+    margin-bottom: 10px;
+}
+
+/* Estilos para o tema escuro */
+body.modo-escuro {
+    background-color: #222; /* Cor de fundo escura */
+    color: #eee; /* Cor do texto */
+}
+
+.container.modo-escuro {
+    background-color: #333; /* Cor de fundo escura */
+}
+
+h1.modo-escuro, h2.modo-escuro {
+    color: #4CAF50; /* Cor do título no modo escuro */
+}
+
+/* Estilos para o botão Modo Escuro */
+#modo-escuro {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#modo-escuro:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos para botões */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
+}
+
+button:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento */
+}
+
+/* Estilos para formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os campos */
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Estilos para listas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s; /* Transição para o fundo */
+}
+
+li:hover {
+    background-color: #eaeaea; /* Cor ao passar o mouse */
+}
+
+/* Estilo para o link de reunião */
+#link-reuniao {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50; /* Cor do link */
+    transition: color 0.3s;
+}
+
+#link-reuniao:hover {
+    color: #388E3C; /* Cor ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    input[type="date"],
+    input[type="time"],
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* General Styles */
+body { /* ... your existing body styles ... */ }
+
+.container { /* ... your existing container styles ... */ }
+
+/* ... other styles ... */
+
+/* Button Styles */
+button {
+  /* ... your existing button styles ... */
+  transition: transform 0.2s ease, background-color 0.2s ease;  /*  Smooth transitions */
+  overflow: hidden; /*  Prevents animation from spilling outside */
+}
+
+button:hover {
+  /* ... your existing button hover styles ... */
+}
+
+/*  Water Drop Effect on Click */
+button:active { /*  Active state for mouse click */
+  transform: scale(0.95) translateY(2px); /* Shrink slightly, move down */
+  background-color: #b2e0ff; /*  Slightly lighter blue */
+}
+
+button:active::before { /*  Create a ripple effect */
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /*  Start small */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /*  Semi-transparent white */
+  opacity: 0;
+  border-radius: 50%; /* Make it round */
+  transition: transform 0.4s ease, opacity 0.4s ease; /*  Smooth transition */
+}
+
+button:active::before {
+  transform: translate(-50%, -50%) scale(2.5); /*  Expand the ripple */
+  opacity: 1; /*  Make it visible */
+}/* ... other CSS styles ... */
+
+body.modo-escuro {
+  background-color: #111; /* Very dark gray */
+  color: #ddd;  /*  Lighter shade of gray */
+}
+
+.container.modo-escuro {
+  background-color: #222; /* Slightly darker gray */
+  border: 1px solid #333; /* Even darker border */
+}
+
+.excluir {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.excluir:hover {
+    background-color: #d32f2f; /* Vermelho mais escuro */
+}
+/* ... other CSS styles ... *//* ... other CSS styles ... */
+
+h1 {
+  font-size: 3.5em; 
+  font-weight: bold; 
+  color: #4CAF50; 
+  margin-bottom: 20px; /*  Increased space */
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); 
+}
+
+/* ... other CSS styles ... */h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #4CAF50; 
+  margin-bottom: 15px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}h1 {
+  font-size: 3.5em;
+  font-weight: bold;  /*  Bold text */
+  color: #4CAF50; 
+  margin-bottom: 15px;
+}
