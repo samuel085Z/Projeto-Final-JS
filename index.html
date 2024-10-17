@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Reuniões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calendário de Reuniões</h1>
+            <button id="modo-escuro" aria-label="Ativar Modo Escuro">Modo Escuro</button>
+        </header>
+
+        <main>
+            <section id="tela-principal" class="tela active">
+                <h2>Bem-vindo ao seu calendário</h2>
+                <p>Gerencie suas reuniões de forma simples e eficiente.</p>
+                <button id="btn-marcar-reuniao" class="action-button">Marcar Reunião</button>
+                <button id="btn-ver-reunioes" class="action-button">Ver Todas as Reuniões</button> 
+            </section>
+
+            <section id="tela-marcar-reuniao" class="tela hidden">
+                <h2>Marcar Reunião</h2>
+                <form id="form-reuniao" aria-labelledby="tela-marcar-reuniao">
+                    <div class="form-group">
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hora">Hora:</label>
+                        <input type="time" id="hora" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" required placeholder="Digite o título da reunião">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="participantes">Participantes (separados por vírgula):</label>
+                        <input type="text" id="participantes" required placeholder="Ex: Nome1, Nome2">
+                    </div>
+
+                    <button type="submit" class="submit-button">Criar Reunião</button>
+                </form>
+                <button id="btn-voltar-principal" class="back-button">Voltar</button>
+            </section>
+
+            <section id="tela-visualizar-reunioes" class="tela hidden">
+                <h2>Suas Reuniões</h2>
+                <ul id="lista-reunioes" aria-labelledby="tela-visualizar-reunioes"></ul>
+                <button id="btn-voltar-principal-2" class="back-button">Voltar</button>
+            </section>
+
+            <div id="link-reuniao" aria-live="polite"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
